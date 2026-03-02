@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { supabase } from "@/integrations/supabase/client";
+// ...existing code...
 import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Trash2, Eye, Search } from "lucide-react";
@@ -46,7 +46,7 @@ const Library = () => {
 
   const fetchComponents = async () => {
     try {
-      const { data, error } = await supabase
+    // ...existing code...
         .from("components")
         .select("*")
         .order("created_at", { ascending: false });
@@ -68,7 +68,7 @@ const Library = () => {
 
   const handleDelete = async (id: string) => {
     try {
-      const { error } = await supabase.from("components").delete().eq("id", id);
+    // ...existing code...
 
       if (error) throw error;
 
